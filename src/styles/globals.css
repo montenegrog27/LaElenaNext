@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "GothamLight";
+  src: url("../app/assets/font/GothamPro-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GothamRegular";
+  src: url("../app/assets/font/GothamPro.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GothamMedium";
+  src: url("../app/assets/font/GothamPro-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GothamBold";
+  src: url("../app/assets/font/GothamPro-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: "GothamRegular", sans-serif;
+}
