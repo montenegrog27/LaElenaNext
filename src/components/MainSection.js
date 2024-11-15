@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import fetchProducts from "@/lib/fetchProducts"; // Asegúrate de importar correctamente
+import fetchProducts from "@/lib/fetchProducts";
 
 import portada from "../app/assets/images/portada.png";
 import Image from "next/image";
@@ -12,7 +12,7 @@ const MainSection = () => {
   useEffect(() => {
     const getProducts = async () => {
       const data = await fetchProducts();
-      setProducts(data.slice(1, 5)); // Esto es solo un ejemplo, ajusta según lo que necesites
+      setProducts(data.slice(1, 5));
     };
     getProducts();
   }, []);
@@ -26,7 +26,7 @@ const MainSection = () => {
         height={500}
         className="w-full h-auto"
       />
-      <div className="flex justify-center gap-4 -mt-52">
+      <div className="flex justify-center gap-4 lg:-mt-52">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

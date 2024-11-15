@@ -7,7 +7,7 @@ import { HiOutlineUserCircle } from "react-icons/hi2";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 const Navbar = () => (
-  <nav className="bg-VerdeNavbarradiente text-white p-4">
+  <nav className="bg-VerdeNavbarradiente text-white px-4 py-2">
     <div className="container mx-auto flex justify-between items-center">
       <Image
         src={logo}
