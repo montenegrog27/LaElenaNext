@@ -1,4 +1,3 @@
-// src/components/StaffSection.js
 import React from "react";
 import staffPortada from "@/app/assets/images/staffPortada.png";
 import EmployeeCategory from "./EmployeeCategory";

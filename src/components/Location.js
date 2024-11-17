@@ -1,4 +1,3 @@
-// src/components/Location.js
 import React from "react";
 
 function Location() {

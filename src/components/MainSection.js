@@ -2,9 +2,10 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import fetchProducts from "@/lib/fetchProducts";
+import Image from "next/image";
+import Slider from "react-slick";
 
 import portada from "../app/assets/images/portada.png";
-import Image from "next/image";
 
 const MainSection = () => {
   const [products, setProducts] = useState([]);
@@ -17,6 +18,15 @@ const MainSection = () => {
     getProducts();
   }, []);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2.1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+
   return (
     <div className="relative">
       <Image
@@ -26,7 +36,18 @@ const MainSection = () => {
         height={500}
         className="w-full h-auto"
       />
-      <div className="flex justify-center gap-4 lg:-mt-52">
+
+      <div className="block lg:hidden -mt-24 pl-3">
+        <Slider {...settings}>
+          {products.map((product) => (
+            <div key={product.id}>
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </Slider>
+      </div>
+
+      <div className="hidden lg:flex justify-center lg:gap-4 lg:-mt-52">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

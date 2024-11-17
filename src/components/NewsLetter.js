@@ -1,4 +1,3 @@
-// src/components/NewsLetter.js
 import React from "react";
 import newsletterImage from "@/app/assets/images/newsletterImage.png";
 

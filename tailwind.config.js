@@ -29,6 +29,7 @@ module.exports = {
         GothamBold: ["GothamBold", "sans-serif"],
       },
       fontSize: {
+        // Tamaños Web
         Titulos: "32px",
         TitulosXS: "16px",
         SubtituloH1: "24px",
@@ -38,6 +39,16 @@ module.exports = {
         Precios: "32px",
         Body: "20px",
         BodyS: "16px",
+        // Tamaños Mobile
+        TitulosMobile: "32px",
+        TitulosXSMobile: "16px",
+        SubtituloH1Mobile: "24px",
+        SubtituloH2Mobile: "20px",
+        BottomMobile: "16px",
+        BottomH2Mobile: "14px",
+        PreciosMobile: "24px",
+        BodyMobile: "16px",
+        BodySMobile: "14px",
       },
       fontWeight: {
         Bold: "700",
