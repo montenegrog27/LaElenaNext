@@ -1,20 +1,28 @@
 import React from "react";
-import staffPerson from "@/app/assets/images/staffPerson.png";
 import Image from "next/image";
+import parse from "html-react-parser"; // Importa el parser
 
-const EmployeeCard = ({ name, role }) => {
+const EmployeeCard = ({ name, role, image }) => {
   return (
-    <div className="border rounded-lg h-auto max-w-48 flex justify-center items-center flex-col shadow-2xl hover:bg-gray-200  transition-transform">
-      <Image
-        src={staffPerson}
-        alt={name}
-        width={"100%"}
-        height={"100%"}
-        className=" object-cover rounded-t-md"
-      />
-      <div className="p-3 h-24">
-        <h3 className="font-bold text-gray-700">{name}</h3>
-        <p className="text-gray-500 text-sm">{role}</p>
+    <div className="border rounded-lg h-auto w-full sm:w-40 flex flex-col justify-center items-center shadow-2xl hover:bg-gray-200 transition-transform">
+      {image ? (
+        <Image
+          src={image}
+          alt={name}
+          width={250}
+          height={250}
+          className="object-cover w-28 h-28 sm:w-full sm:h-full rounded-t-md"
+        />
+      ) : (
+        <span className="text-gray-500">Sin Imagen</span>
+      )}
+      <div className="p- h-auto sm:h-24">
+        <h3 className="font-bold text-gray-700 text-center text-sm sm:text-base">
+          {name}
+        </h3>
+        <div className="text-gray-500 text-xs sm:text-sm text-center w-28 lg:w-36 ">
+          {parse(role)}
+        </div>
       </div>
     </div>
   );

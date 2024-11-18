@@ -1,57 +1,57 @@
-import React from "react";
-import staffPortada from "@/app/assets/images/staffPortada.png";
-import EmployeeCategory from "./EmployeeCategory";
-import Image from "next/image";
+"use client";
+import React, { useState, useEffect } from "react";
+import fetchStaff from "@/lib/fetchStaff";
 
-const staffData = {
-  family: [
-    { name: "Remo Bortolotti", role: "Presidente" },
-    { name: "Carlos Bortolotti", role: "Gerente General" },
-    { name: "Margarita Bortolotti", role: "Gerente Administrativo y Legal" },
-    { name: "Matias Nuñez", role: "Gerente Comercial y MKT" },
-    { name: "Matias Nuñez", role: "Gerente Comercial y MKT" },
-  ],
-  office: [
-    { name: "Mario Paludi", role: "Gerencia operativa" },
-    { name: "Emilse Eltueti", role: "Gerencia financiera" },
-    { name: "Ivana Dachini", role: "Recursos humanos" },
-    { name: "Mario Paludi", role: "Gerencia operativa" },
-    { name: "Emilse Eltueti", role: "Gerencia financiera" },
-    { name: "Ivana Dachini", role: "Recursos humanos" },
-  ],
-  fieldTeam: [
-    { name: "Germán Potor", role: "Referente en hornos y bolsas" },
-    { name: "Claudio Batoraynik", role: "Referente en hornos y bolsas" },
-    { name: "Mario Paludi", role: "Gerencia operativa" },
-    { name: "Emilse Eltueti", role: "Gerencia financiera" },
-    { name: "Ivana Dachini", role: "Recursos humanos" },
-    { name: "Mario Paludi", role: "Gerencia operativa" },
-    { name: "Emilse Eltueti", role: "Gerencia financiera" },
-    { name: "Ivana Dachini", role: "Recursos humanos" },
-    { name: "Mario Paludi", role: "Gerencia operativa" },
-    { name: "Emilse Eltueti", role: "Gerencia financiera" },
-    { name: "Ivana Dachini", role: "Recursos humanos" },
-  ],
-};
+import EmployeeCategory from "./EmployeeCategory";
 
 const StaffSection = () => {
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    const getStaff = async () => {
+      const data = await fetchStaff();
+      setEmployees(data);
+    };
+    getStaff();
+  }, []);
+
+  const employeeCategories = [
+    { id: 26, name: "equipodelpredio" },
+    { id: 24, name: "lafamilia" },
+    { id: 25, name: "office" },
+  ];
+
+  const groupedEmployees = employeeCategories.reduce((acc, category) => {
+    acc[category.name] = [];
+    return acc;
+  }, {});
+
+  employees.forEach((employee) => {
+    employee.categories.forEach((category) => {
+      const categoryName = category.slug;
+      if (groupedEmployees[categoryName]) {
+        groupedEmployees[categoryName].push({
+          id: employee.id,
+          name: employee.name,
+          description: employee.description,
+          image: employee.images[0].src,
+        });
+      }
+    });
+  });
+
+  const family = groupedEmployees.lafamilia;
+  const office = groupedEmployees.office;
+  const predio = groupedEmployees.equipodelpredio;
+
+  console.log("predio,", predio);
+  console.log("family,", family);
+
   return (
     <div>
-      <Image
-        src={staffPortada}
-        alt="Portada del Staff"
-        width={"100%"}
-        height={"100%"}
-      />
-      <EmployeeCategory
-        title="La familia de 'La Elena'"
-        employees={staffData.family}
-      />
-      <EmployeeCategory title="The office y más" employees={staffData.office} />
-      <EmployeeCategory
-        title="El equipo del predio"
-        employees={staffData.fieldTeam}
-      />
+      <EmployeeCategory title="La familia de 'La Elena'" employees={family} />
+      <EmployeeCategory title="The office y más" employees={office} />
+      <EmployeeCategory title="El equipo del predio" employees={predio} />
     </div>
   );
 };

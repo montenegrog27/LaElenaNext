@@ -3,50 +3,53 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/app/assets/logo/logo.png";
+import logoMobile from "@/app/assets/logo/logoMobile.png";
 import { CiShoppingCart } from "react-icons/ci";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useAuth } from "../context/AuthContext";
-import { useRouter } from "next/navigation";
 
 const Navbar = () => {
-  const { user, login, logout } = useAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const { user, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
-
-  const handleLogin = async () => {
-    try {
-      await login(email, password);
-      setIsLoginModalOpen(false);
-      router.push("/user");
-    } catch (error) {
-      console.error("Error al iniciar sesión:", error);
-      alert("Error al iniciar sesión");
-    }
-  };
 
   return (
-    <nav className="bg-VerdeNavbarradiente text-white px-4 py-2">
+    <nav className="bg-VerdeNavbarradiente text-white px-2 md:px-4 py-2">
       <div className="container mx-auto flex justify-between items-center">
         <Image
           src={logo}
           alt="Logo"
           width={"100%"}
           height={"100%"}
-          className="h-10"
+          className="hidden md:block h-10"
+        />
+        <Image
+          src={logoMobile}
+          alt="LogoMobile"
+          width={"100%"}
+          height={"100%"}
+          className="md:hidden h-10"
         />
 
         <input
           type="text"
           placeholder="Buscar productos, marcas y más"
-          className="p-2 rounded bg-white text-black w-1/3 hidden md:block"
+          className="p-2 mx-2 md:mx-0 rounded bg-white text-black w-full h-[90%] md:h-auto md:w-1/3 "
         />
 
-        <div className="flex space-x-4">
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden flex items-center p-2 text-white"
+        >
+          {isMenuOpen ? (
+            <AiOutlineClose size={24} />
+          ) : (
+            <AiOutlineMenu size={24} />
+          )}
+        </button>
+
+        <div className="flex space-x-0 md:space-x-4">
           {user ? (
             <button
               onClick={logout}
@@ -63,22 +66,11 @@ const Navbar = () => {
               Iniciar Sesión
             </Link>
           )}
-          <button className="hidden md:flex items-center bg-white p-2 text-black rounded">
-            <CiShoppingCart className="h-5 w-5 mr-2" />
-            Carrito
+          <button className=" md:flex items-center bg-VerdeOscuro md:bg-white p-1 rounded-full md:p-2 text-white md:text-black md:rounded">
+            <CiShoppingCart className=" w-7 h-7 md:h-5 md:w-5 md:mr-2" />
+            <p className="hidden md:block">Carrito</p>
           </button>
         </div>
-
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden flex items-center p-2 text-white"
-        >
-          {isMenuOpen ? (
-            <AiOutlineClose size={24} />
-          ) : (
-            <AiOutlineMenu size={24} />
-          )}
-        </button>
       </div>
 
       {isMenuOpen && (
@@ -115,10 +107,10 @@ const Navbar = () => {
               Iniciar Sesión
             </Link>
           )}
-          <button className="flex items-center bg-white p-2 text-black rounded">
+          {/* <button className="flex items-center bg-white p-2 text-black rounded">
             <CiShoppingCart className="h-5 w-5 mr-2" />
             Carrito
-          </button>
+          </button> */}
         </div>
       )}
 
