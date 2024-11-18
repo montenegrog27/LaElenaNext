@@ -2,12 +2,15 @@ import axios from "axios";
 
 export async function GET() {
   try {
-    const response = await axios.get(`${process.env.WC_API_URL}/products`, {
-      auth: {
-        username: process.env.WC_CONSUMER_KEY,
-        password: process.env.WC_CONSUMER_SECRET,
-      },
-    });
+    const response = await axios.get(
+      `${process.env.WC_API_URL}/products?category=19`,
+      {
+        auth: {
+          username: process.env.WC_CONSUMER_KEY,
+          password: process.env.WC_CONSUMER_SECRET,
+        },
+      }
+    );
 
     return new Response(JSON.stringify(response.data), {
       status: 200,
