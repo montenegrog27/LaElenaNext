@@ -7,7 +7,9 @@ export default function Contact() {
   return (
     <>
       <HeaderContactSection />;
-      <NewsLetter />
+      <div className="hidden md:block w-full h-full">
+        <NewsLetter />
+      </div>
       <Location />
       <FooterWeb />
     </>

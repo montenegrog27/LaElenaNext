@@ -17,6 +17,7 @@ module.exports = {
         CasiBlanco: "#E6E6E6",
         Blanco20: "#CEE0D7",
         Blanco10: "#E7F0EC",
+        GrisClaro: "#BEBEBE",
       },
       backgroundImage: {
         VerdeNavbarradiente: "linear-gradient(to bottom, #06331C, #0C6638)",

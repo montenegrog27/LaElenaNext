@@ -2,7 +2,7 @@ import React from "react";
 
 function Location() {
   return (
-    <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12">
+    <div className="container mx-auto px-6 py-16 grid lg:grid-cols-2 gap-12">
       <div className="bg-gray-200 h-80 rounded-lg overflow-hidden shadow-md">
         <iframe
           title="Ubicación"
