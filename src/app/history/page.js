@@ -70,14 +70,14 @@ function History() {
     <>
       <div className="container mx-auto px-4 my-36 w-full">
         <div className="relative z-20">
-          <h1 className="text-lg md:text-3xl font-bold mb-8 text-center bg-white md:bg-transparent z-11 border-4 border-VerdeOscuro rounded-xl md:border-0">
+          <h1 className="text-lg md:text-3xl font-bold mb-8 text-center bg-white lg:bg-transparent z-11 border-4 border-VerdeOscuro rounded-xl lg:border-0">
             Somos La Elena y esta es nuestra historia
           </h1>
         </div>
         <div className="relative wrap overflow-hidden px-0 md:px-24 h-full w-full ">
           <div
             id="raya"
-            className="fixed top-0 bottom-0 left-40 md:left-58 w-1.5 bg-VerdeOscuro -ml-1 md:ml-5 z-0"
+            className="fixed top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1.5 bg-VerdeOscuro -ml-1 md:left-40 md:ml-5 z-0"
           ></div>
           {timelineData.map((milestone, index) => (
             <div
