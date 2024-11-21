@@ -69,9 +69,6 @@ Mirando hacia el futuro, La Elena S.A. continúa innovando y creciendo. Actualme
 function History() {
   return (
     <>
-      {/* <HistorySection />
-      <FooterWeb />; */}
-
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-8 text-center">
           Somos La Elena y esta es nuestra historia
@@ -107,6 +104,7 @@ function History() {
           ))}
         </div>
       </div>
+      <FooterWeb />;
     </>
   );
 }

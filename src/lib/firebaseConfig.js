@@ -1,15 +1,14 @@
-// src/lib/firebaseConfig.js
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAfyaxwya1Q3n7WrgnIditpk46Lx3TPIrw",
-  authDomain: "la-elena.firebaseapp.com",
-  projectId: "la-elena",
-  storageBucket: "la-elena.firebasestorage.app",
-  messagingSenderId: "138774601460",
-  appId: "1:138774601460:web:e4d04da334b05d9b4288a1",
-  measurementId: "G-J1DYS89FP2",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
