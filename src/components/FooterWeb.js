@@ -8,7 +8,7 @@ import Image from "next/image";
 
 function FooterWeb() {
   return (
-    <footer className="bg-VerdeFooterGradiente text-white p-5 lg:p-10">
+    <footer className="w-full py-4 z-10 relative bg-VerdeFooterGradiente text-white -bottom-10 p-5 lg:p-10 ">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 md:space-x-8">
         <div className="flex items-center justify-center md:justify-start">
           <Image src={logo} alt="logo" width={150} height={150} />

@@ -15,7 +15,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-VerdeNavbarradiente text-white px-2 md:px-4 py-2">
+    <nav className="bg-VerdeNavbarradiente text-white px-2 md:px-4 py-2 fixed top-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Image
           src={logo}
