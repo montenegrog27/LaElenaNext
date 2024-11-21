@@ -1,6 +1,6 @@
-// import FooterWeb from "@/components/FooterWeb";
 // import HistorySection from "@/components/HistorySection";
 "use client";
+import FooterWeb from "@/components/FooterWeb";
 import Image from "next/image";
 import misionVision from "../assets/images/misionVision.png";
 
@@ -74,7 +74,10 @@ function History() {
           Somos La Elena y esta es nuestra historia
         </h1>
         <div className="relative wrap overflow-hidden px-24 h-full">
-          <div className="border-2 absolute  border-VerdeOscuro h-full ml-9"></div>
+          <div
+            id="raya"
+            className="border-2 absolute  border-VerdeOscuro h-full ml-9"
+          ></div>
           {timelineData.map((milestone, index) => (
             <div
               key={milestone.id}
