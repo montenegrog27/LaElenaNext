@@ -1,36 +1,29 @@
 "use client";
-import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
-import { useRouter } from "next/navigation"; // Cambiar a next/navigation
-import { CiShoppingCart } from "react-icons/ci";
+import { useRouter } from "next/navigation"; // Importar useRouter
 import { HiOutlineUserCircle } from "react-icons/hi2";
 
 const Login = () => {
-  const { user, login, logout } = useAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { user, loginWithGoogle, logout } = useAuth();
   const router = useRouter();
 
-  // Manejar el inicio de sesión
-  const handleLogin = async () => {
-    try {
-      await login(email, password);
-      router.push("/user");
-    } catch (error) {
-      console.error("Error al iniciar sesión:", error);
-      alert("Error al iniciar sesión");
-    }
+  const handleGoogleLogin = async () => {
+    await loginWithGoogle();
+    router.push("/user"); // Redirige a "/user" después de iniciar sesión
   };
-  const handleLogout = () => {
-    router.push("/"); // Redirige a "/"
-    logout(); // Limpia el estado del usuario
+
+  const handleCancel = () => {
+    router.push("/"); // Redirige a "/" al cancelar
   };
 
   return (
-    <>
+    <div>
       {user ? (
         <button
-          onClick={handleLogout}
+          onClick={() => {
+            logout();
+            router.push("/");
+          }}
           className="flex items-center bg-white p-2 text-black rounded"
         >
           <HiOutlineUserCircle className="h-5 w-5 mr-2" />
@@ -40,36 +33,27 @@ const Login = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg w-96">
             <h2 className="text-xl font-semibold">Iniciar sesión</h2>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="p-2 rounded bg-gray-200 text-black w-full my-2"
-            />
-            <input
-              type="password"
-              placeholder="Contraseña"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="p-2 rounded bg-gray-200 text-black w-full my-2"
-            />
+
+            {/* Botón de Iniciar sesión con Google */}
             <button
-              onClick={handleLogin}
-              className="bg-green-500 text-white w-full p-2 rounded mt-4"
+              onClick={handleGoogleLogin}
+              className="bg-red-500 text-white w-full p-2 rounded mt-4 flex justify-center items-center"
             >
-              Iniciar sesión
+              <HiOutlineUserCircle className="h-5 w-5 mr-2" />
+              Iniciar sesión con Google
             </button>
+
+            {/* Botón de Cancelar */}
             <button
-              onClick={() => router.push("/")}
-              className=" bg-Blanco20 text-black w-full p-2 rounded mt-4"
+              onClick={handleCancel}
+              className="bg-gray-400 text-white w-full p-2 rounded mt-2 flex justify-center items-center"
             >
               Cancelar
             </button>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
