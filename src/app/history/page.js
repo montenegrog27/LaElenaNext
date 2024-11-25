@@ -74,7 +74,7 @@ function History() {
             Somos La Elena y esta es nuestra historia
           </h1>
         </div>
-        <div className="relative wrap overflow-hidden px-0 md:px-24 h-full w-full ">
+        <div className="relative wrap overflow-hidden px-0 md:px-[100px] h-full w-full ">
           <div
             id="raya"
             className="fixed top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1.5 bg-VerdeOscuro -ml-1 md:left-40 md:ml-5 z-0"
@@ -85,7 +85,7 @@ function History() {
               className="mb-8 flex justify-start items-center w-full flex-col md:flex-row gap-10  "
             >
               {/* <div className="order-1 "></div> */}
-              <div className="z-6 flex items-center order-1  bg-VerdeOscuro shadow-xl w-4 h-6 md:w-8 md:h-8 rounded-full min-w-fit p-2 absolute">
+              <div className="z-6 flex items-center left-40 order-1 bg-VerdeOscuro shadow-xl w-4 h-6 md:w-8 md:h-8 rounded-full min-w-fit p-2 absolute">
                 <h1 className="mx-auto font-semibold text-BodyMobile md:text-lg px-2 text-white">
                   {milestone.date}
                 </h1>
