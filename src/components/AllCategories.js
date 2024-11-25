@@ -15,7 +15,7 @@ const AllCategories = () => {
   }, []);
 
   return (
-    <div className="relative p-5 lg:px-48 py-10">
+    <div className="relative p-5 lg:px-[100px] py-10">
       <h2 className="font-GothamBold text-Titulos my-10 text-start w-full">
         Todas las categorías
       </h2>

@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'custom-card': '0px 24px 7px 0px rgba(0, 0, 0, 0.00), 0px 15px 6px 0px rgba(0, 0, 0, 0.01), 0px 9px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px 0px rgba(0, 0, 0, 0.09), 0px 1px 2px 0px rgba(0, 0, 0, 0.10)',
+      },
       colors: {
         GrisOscuro: "#666666",
         Rojo: "#EE1D23",
@@ -46,10 +49,10 @@ module.exports = {
         SubtituloH1Mobile: "24px",
         SubtituloH2Mobile: "20px",
         BottomMobile: "16px",
-        BottomH2Mobile: "14px",
-        PreciosMobile: "24px",
+        BottomH2Mobile: "10px",
+        PreciosMobile: "16px",
         BodyMobile: "16px",
-        BodySMobile: "14px",
+        BodySMobile: "10px",
       },
       fontWeight: {
         Bold: "700",

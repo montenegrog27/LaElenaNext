@@ -3,14 +3,14 @@ import misionVision from "@/app/assets/images/misionVision.png";
 import Image from "next/image";
 function MisionVision() {
   return (
-    <div className="flex flex-col justify-center items-center px-5 py-10 lg:p-10 bg-Blanco10">
-      <div className="flex mb-10 lg:mb-0 flex-col lg:flex-row justify-between items-center gap-3 lg:gap-10">
-        <Image src={misionVision} width={"100%"} height={"100%"} alt="image1" />
+    <div className="flex flex-col justify-between items-center px-5 py-[34px]  md:py-[40px] md:px-[100px] bg-Blanco10 gap-[24px] md:gap-[40px]">
+      <div className="flex mb-10 lg:mb-0 flex-col md:flex-row text-start md:justify-between md:items-center gap-3 md:gap-[70px] w-full ">
+        <Image src={misionVision} width={614} height={234} alt="image1" className="object-cover w-auto h-[200px] md:w-[614px] md:h-[234px]"/>
         <div>
           <h3 className="text-SubtituloH1 text-Verde font-GothamBold">
             Seriedad y trayectoria
           </h3>
-          <p>
+          <p className="w-auto md:h-[189px] text-BodySMobile md:text-Body">
             Entregar en tiempo y forma la gama completa de productos y servicios
             a nuestros clientes creciendo y desarrollándonos a la par con la
             conjunción justa de gran empresa qué mantiene sus raíces de empresa
@@ -22,22 +22,16 @@ function MisionVision() {
         </div>
       </div>
 
-      <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-3 lg:gap-10">
+      <div className="flex flex-col-reverse md:flex-row text-start md:justify-between md:items-center gap-3 md:gap-[70px] w-full ">
         <div>
           <h3 className="text-SubtituloH1 text-Verde font-GothamBold">
-            Seriedad y trayectoria
+          Nuestra visión
           </h3>
-          <p>
-            Entregar en tiempo y forma la gama completa de productos y servicios
-            a nuestros clientes creciendo y desarrollándonos a la par con la
-            conjunción justa de gran empresa qué mantiene sus raíces de empresa
-            familiar. En tiempo y forma significa cumplir con los requerimientos
-            de nuestros clientes en cuanto a entrega, asesoramiento, atención,
-            calidad y buen precio; manteniendo la calidez humana y empatía qué
-            siempre nos caracterizó.
+          <p className="w-auto md:h-[189px] text-BodySMobile md:text-Body">
+          Entregar en tiempo y forma la gama completa de productos y servicios a nuestros clientes creciendo y desarrollándonos a la par con la conjunción justa de gran empresa qué mantiene sus raíces de empresa familiar. En tiempo y forma significa cumplir con los requerimientos de nuestros clientes en cuanto a entrega, asesoramiento, atención, calidad y buen precio; manteniendo la calidez humana y empatía qué siempre nos caracterizó.
           </p>
         </div>
-        <Image src={misionVision} width={"100%"} height={"100%"} alt="image1" />
+        <Image src={misionVision} width={614} height={234} alt="image1" className="object-cover w-auto h-[200px] md:w-[614px] md:h-[234px]"/>
       </div>
     </div>
   );

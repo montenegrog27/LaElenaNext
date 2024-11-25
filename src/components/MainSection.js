@@ -19,10 +19,10 @@ const MainSection = () => {
   }, []);
 
   const settings = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
-    slidesToShow: 2.1,
+    slidesToShow: 3.1,
     slidesToScroll: 1,
     arrows: false,
   };
@@ -33,11 +33,11 @@ const MainSection = () => {
         src={portada}
         alt="Portada"
         width={"100%"}
-        height={500}
-        className="w-full h-auto"
+        height={"100%"}
+        className="h-[216px] md:w-full md:h-auto object-cover"
       />
 
-      <div className="block lg:hidden -mt-24 pl-3">
+      <div className="block lg:hidden -mt-24 pl-[16px] pr-0 pt-[32px] ">
         <Slider {...settings}>
           {products.map((product) => (
             <div key={product.id}>
@@ -47,7 +47,7 @@ const MainSection = () => {
         </Slider>
       </div>
 
-      <div className="hidden lg:flex justify-center lg:gap-4 lg:-mt-52">
+      <div className="hidden md:flex px-[16px] md:px-[100px] justify-between lg:-mt-52">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
