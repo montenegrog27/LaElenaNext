@@ -4,7 +4,7 @@ import EmployeeCard from "./EmployeeCard";
 const EmployeeCategory = ({ title, employees }) => {
   console.log("emplotes", employees);
   return (
-    <section className="my-8 md:px-[100px] flex-col justify-center items-center">
+    <section className="my-8 md:my-14 md:px-[100px] flex-col justify-center items-center">
       <div className="h-auto mb-4 md:mb-[50px] flex flex-col justify-center items-center">
       <h2 className=" text-SubtituloH2Mobile md:text-Titulos font-Bold text-center">
         {title}
