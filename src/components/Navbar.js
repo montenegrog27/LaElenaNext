@@ -80,7 +80,7 @@ const Navbar = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden flex flex-col bg-VerdeNavbarradiente text-white p-4 space-y-4">
+        <div className="md:hidden flex flex-col  text-white p-4 space-y-4">
           <Link href="/" className="hover:underline">
             Inicio
           </Link>
@@ -113,10 +113,7 @@ const Navbar = () => {
               Iniciar Sesión
             </Link>
           )}
-          {/* <button className="flex items-center bg-white p-2 text-black rounded">
-            <CiShoppingCart className="h-5 w-5 mr-2" />
-            Carrito
-          </button> */}
+
         </div>
       )}
 

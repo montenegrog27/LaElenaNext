@@ -47,7 +47,7 @@ const MainSection = () => {
         </Slider>
       </div>
 
-      <div className="hidden md:flex px-[16px] md:px-[100px] justify-between lg:-mt-52">
+      <div className="hidden md:flex px-[16px] md:px-[100px] lg:px-[200px] justify-between lg:-mt-52 gap-10">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

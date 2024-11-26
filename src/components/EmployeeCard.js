@@ -4,14 +4,14 @@ import parse from "html-react-parser"; // Importa el parser
 
 const EmployeeCard = ({ name, role, image }) => {
   return (
-    <div className="border rounded-lg h-auto w-full sm:w-40 flex flex-col justify-center items-center shadow-2xl hover:bg-gray-200 transition-transform">
+    <div className="border rounded-lg h-auto w-full md:w-[190px] md:h-[275px] flex flex-col justify-center items-center shadow-custom-card">
       {image ? (
         <Image
           src={image}
           alt={name}
-          width={250}
-          height={250}
-          className="object-cover w-28 h-28 sm:w-full sm:h-full rounded-t-md"
+          width={190}
+          height={190}
+          className="object-cover w-28 h-28 md:h-[190px] md:w-[190px] sm:w-full sm:h-full rounded-t-md"
         />
       ) : (
         <span className="text-gray-500">Sin Imagen</span>

@@ -1,8 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import fetchStaff from "@/lib/fetchStaff";
+import staffPortada from "@/app/assets/images/staffPortada.png";
 
 import EmployeeCategory from "./EmployeeCategory";
+import Image from "next/image";
 
 const StaffSection = () => {
   const [employees, setEmployees] = useState([]);
@@ -49,6 +51,15 @@ const StaffSection = () => {
 
   return (
     <div>
+            <Image
+        src={staffPortada}
+        alt="Portada de Contacto"
+        layout="responsive"
+        width={1200}
+        height={600}
+        className="w-full h-auto mt-28 object-cover"
+      />
+
       <EmployeeCategory title="La familia de 'La Elena'" employees={family} />
       <EmployeeCategory title="The office y más" employees={office} />
       <EmployeeCategory title="El equipo del predio" employees={predio} />

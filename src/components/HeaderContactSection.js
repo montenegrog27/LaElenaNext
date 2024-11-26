@@ -5,7 +5,7 @@ import imageContact from "@/app/assets/images/imageContact.png";
 
 function HeaderContactSection() {
   return (
-    <div className="relative">
+    <div className="relative mt-16 md:mt-28">
       <Image
         src={portadaContact}
         alt="Portada de Contacto"
@@ -15,16 +15,14 @@ function HeaderContactSection() {
         className="w-full h-auto object-cover"
       />
 
-      <div className="container mx-auto px-4 py-8 lg:py-16 grid lg:grid-cols-3 gap-12 relative md:-mt-72">
-        <div className="md:col-span-2 flex items-center justify-center">
+      <div className="container mx-auto px-4 md:px-[100px] py-8 lg:py-16 grid lg:grid-cols-3 gap-12 relative md:-mt-72">
           <Image
             src={imageContact}
             alt="Imagen de Contacto"
             width={400}
             height={300}
-            className="hidden md:block rounded-lg shadow-lg md:mt-72 w-[80%] h-auto"
+            className="hidden md:col-span-2 md:flex items-center justify-center  rounded-lg  md:mt-72 w-[80%] h-auto"
           />
-        </div>
 
         <div className="relative">
           <div className="bg-Blanco10 p-8 rounded-lg shadow-md border border-gray-300 lg:col-start-3 -mt-12">

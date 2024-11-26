@@ -29,7 +29,7 @@ import React from "react";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="border rounded-lg mb-[32px]  md:pb-[20px] h-[201px] w-[120px] md:w-[295px] md:h-[436px] flex justify-start items-start flex-col hover:scale-105 hover:cursor-pointer transition-transform shadow-custom-card">
+    <div className="border rounded-lg mb-[32px]  md:pb-[20px] h-[201px] w-[120px] md:w-[295px] md:h-[416px] flex justify-start items-start flex-col hover:scale-105 hover:cursor-pointer transition-transform shadow-custom-card">
       <img
         src={product.images[0]?.src}
         alt={product.name}
