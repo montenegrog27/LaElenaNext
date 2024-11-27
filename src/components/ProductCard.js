@@ -29,11 +29,11 @@ import React from "react";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="border rounded-lg mb-[32px]  md:pb-[20px] h-[201px] w-[120px] md:w-[295px] md:h-[416px] flex justify-start items-start flex-col hover:scale-105 hover:cursor-pointer transition-transform shadow-custom-card">
-      <img
+<div className="h-[201px] w-[90px] md:w-[250px] md:h-[416px] 2xl:w-[295px] 2xl:h-[416px] border rounded-lg mb-[32px] md:pb-[20px] flex justify-start start flex-col hover:translate-y-[1px] hover:cursor-pointer transition-all duration-700 hover:shadow-[4px_20px_15px_2px_rgba(0,0,0,0.15)] shadow-custom-card">
+<img
         src={product.images[0]?.src}
         alt={product.name}
-        className="w-[120px] h-[106px] lg:w-[295px] lg:h-[260px] object-cover rounded-t-md"
+        className="w-[120px] h-[106px] lg:w-[295px] lg:h-[250px] object-cover rounded-t-md"
       />
       <div className="p-[8px] lg:p-[20px] flex-col justify-center items-center gap-[8px] md:gap-[15px]  ">
         <p className="text-Acento font-GothamBold text-BottomH2Mobile lg:text-Bottom">
@@ -50,3 +50,4 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
+

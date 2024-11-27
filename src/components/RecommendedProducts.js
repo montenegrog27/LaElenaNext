@@ -26,8 +26,8 @@ const RecommendedProducts = () => {
   };
 
   return (
-    <div className=" py-10 md:py-[50px] w-full pl-[16px] md:px-[100px]">
-      <h2 className=" font-GothamBold text-2xl lg:text-Titulos my-5 lg:mt-[20px] text-start w-full pl-3 md:pl-0">
+    <div className=" py-10 md:py-[50px] w-full pl-[16px] md:pl-[0px]  flex flex-col justify-center items-center">
+      <h2 className="md:w-[80%] 2xl:w-[70%] font-GothamBold text-2xl lg:text-Titulos my-5 lg:mt-[20px] text-start w-full pl-3 md:pl-0">
         Productos Recomendados
       </h2>
 
@@ -43,10 +43,12 @@ const RecommendedProducts = () => {
       </div>
 
       {/* desktop */}
-      <div className="hidden md:flex justify-between ">
+      <div className="w-full flex justify-center items-center">
+      <div className="hidden px-[16px] md:px-[0px] md:flex justify-between md:w-[80%] 2xl:w-[70%]">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
+      </div>
       </div>
     </div>
   );

@@ -16,13 +16,13 @@ function HeaderContactSection() {
       />
 
       <div className="container mx-auto px-4 md:px-[100px] py-8 lg:py-16 grid lg:grid-cols-3 gap-12 relative md:-mt-72">
-          <Image
-            src={imageContact}
-            alt="Imagen de Contacto"
-            width={400}
-            height={300}
-            className="hidden md:col-span-2 md:flex items-center justify-center  rounded-lg  md:mt-72 w-[80%] h-auto"
-          />
+        <Image
+          src={imageContact}
+          alt="Imagen de Contacto"
+          width={400}
+          height={300}
+          className="hidden md:col-span-2 md:flex items-center justify-center  rounded-lg  md:mt-96 2xl:mt-80 w-[80%] h-auto"
+        />
 
         <div className="relative">
           <div className="bg-Blanco10 p-8 rounded-lg shadow-md border border-gray-300 lg:col-start-3 -mt-12">
@@ -47,7 +47,7 @@ function HeaderContactSection() {
               />
               <textarea
                 placeholder="Mensaje"
-                className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 resize-none overflow-y-auto"
                 rows="4"
               ></textarea>
               <div className="flex justify-end items-center">
@@ -61,15 +61,16 @@ function HeaderContactSection() {
             </form>
           </div>
 
-          <div className="mt-6">
-            <p className="text-gray-600 mb-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <div className="mt-6 ml-2">
+            <h1 className="text-SubtituloH1 font-Bold mb-2  ">¡Contactanos!</h1>
+            <p className="text-gray-600 mb-2 text-Bottom leading-5">
+              Lorem ipsum dolor sit amet
             </p>
-            <p className="text-gray-600 mb-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <p className="text-gray-600 mb-2 text-Bottom leading-5">
+              Lorem ipsum dolor sit amet
             </p>
-            <p className="text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <p className="text-gray-600 mb-2 text-Bottom leading-5">
+              Lorem ipsum dolor sit amet
             </p>
           </div>
         </div>

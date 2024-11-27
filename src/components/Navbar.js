@@ -8,6 +8,7 @@ import { CiShoppingCart } from "react-icons/ci";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { TbUserCircle } from "react-icons/tb";
 import { CiSearch } from "react-icons/ci";
 import { useAuth } from "../context/AuthContext";
 
@@ -68,7 +69,7 @@ const Navbar = () => {
             <Link
               href="/login"
               className="hidden md:flex items-center bg-white p-2 text-black rounded"
-            >
+            ><TbUserCircle   className="mr-2 w-5 h-5 text-GothamLight text-gray-800"/>
               Iniciar Sesión
             </Link>
           )}

@@ -4,10 +4,11 @@ import imagenN from "../app/assets/images/imagenNewsLetter.png";
 function NewsLetter() {
   return (
     <div
-      className="relative bg-cover bg-center h-48 flex items-center justify-end pr-36 shadow-lg"
+      className="relative bg-cover bg-center h-48 flex items-center justify-center w-full  shadow-lg"
       style={{ backgroundImage: `url(${imagenN.src})` }}
     >
-      <div className=" bg-opacity-70 p-6 w-full max-w-md flex flex-col justify-center items-end">
+      <div className="md:w-[80%] 2xl:w-[70%] flex justify-end items-end">
+      <div className=" bg-opacity-70 p-6 md:p-0 w-full max-w-md flex flex-col justify-center items-end ">
         <h2 className="text-white text-lg font-semibold mb-3 text-center">
           Subscribite a nuestro newsletter
         </h2>
@@ -22,6 +23,7 @@ function NewsLetter() {
             Enviar
           </button>
         </div>
+      </div>
       </div>
     </div>
   );
