@@ -1,6 +1,7 @@
 import FooterWeb from "@/components/FooterWeb";
 import RecommendedProducts from "@/components/RecommendedProducts";
 import fetchProduct from "@/lib/fetchProduct";
+import Link from "next/link";
 import { FaTruckFast } from "react-icons/fa6";
 
 const ProductPage = async ({ params }) => {
@@ -21,13 +22,13 @@ const ProductPage = async ({ params }) => {
       <div className="py-6 mt-40 w-full flex flex-col justify-center items-center">
         {/* Breadcrumb */}
         <nav className="text-sm md:w-[80%] 2xl:w-[70%] text-gray-600 flex gap-2 items-center mb-6">
-          <a href="/" className="hover:underline">
+          <Link href="/" className="hover:underline">
             Volver
-          </a>
+          </Link>
           <span>/</span>
-          <a href="/griferias" className="hover:underline">
+          <Link href="/griferias" className="hover:underline">
             Griferías
-          </a>
+          </Link>
           <span>/</span>
           <span className="text-gray-900 font-bold">Griferías para baño</span>
         </nav>
