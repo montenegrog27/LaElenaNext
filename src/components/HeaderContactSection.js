@@ -21,11 +21,11 @@ function HeaderContactSection() {
           alt="Imagen de Contacto"
           width={400}
           height={300}
-          className="hidden md:col-span-2 md:flex items-center justify-center  rounded-lg  md:mt-96 2xl:mt-80 w-[80%] h-auto"
+          className="hidden lg:col-span-2 lg:flex items-center justify-center  rounded-lg  md:mt-96 2xl:mt-80 w-[80%] h-auto"
         />
 
-        <div className="relative">
-          <div className="bg-Blanco10 p-8 rounded-lg shadow-md border border-gray-300 lg:col-start-3 -mt-12">
+        <div className="relative bg-green-500 md:bg-blue-500 lg:bg-red-500 2xl:bg-yellow-400 sm:bg-orange-400 ">
+          <div className="bg-Blanco10 p-8 rounded-lg shadow-md border border-gray-300 lg:col-start-3 mt-0 lg:-mt-10 2xl:-mt-12">
             <h2 className="text-2xl font-semibold mb-4">
               ¡Déjanos tu consulta!
             </h2>
@@ -60,6 +60,14 @@ function HeaderContactSection() {
               </div>
             </form>
           </div>
+
+          <Image
+            src={imageContact}
+            alt="Imagen de Contacto"
+            width={400}
+            height={300}
+            className=" lg:hidden pt-10 rounded-lg 2xl:mt-80 w-full h-auto"
+          />
 
           <div className="mt-6 ml-2">
             <h1 className="text-SubtituloH1 font-Bold mb-2  ">¡Contactanos!</h1>

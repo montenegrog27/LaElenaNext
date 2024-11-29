@@ -37,22 +37,22 @@ const MainSection = () => {
         className="h-[216px] md:w-full md:h-auto object-cover"
       />
 
-      <div className="block lg:hidden -mt-24 pl-[16px] pr-0 pt-[32px] ">
+      <div className="block md:hidden -mt-24 pl-[5%] pr-0 pt-[32px] w-[100%] bg-red-500">
         <Slider {...settings}>
           {products.map((product) => (
-            <div key={product.id}>
+            <div className="" key={product.id}>
               <ProductCard product={product} />
             </div>
           ))}
         </Slider>
       </div>
       <div className="w-full flex justify-center items-center">
-            <div className="hidden md:flex px-[16px] md:px-[0px] justify-between lg:-mt-52 md:w-[80%] 2xl:w-[70%] ">
-            {/* 2xl:bg-blue-500 md:bg-red-500 lg:bg-green-500 */}
-              {products.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
+        <div className="hidden md:flex px-[16px] md:px-[0px] justify-between md:-mt-40 md:w-[80%] 2xl:w-[70%] ">
+          {/* 2xl:bg-blue-500 md:bg-red-500 lg:bg-green-500 */}
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
     </div>
   );

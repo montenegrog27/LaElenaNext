@@ -26,13 +26,13 @@ const RecommendedProducts = () => {
   };
 
   return (
-    <div className=" py-10 md:py-[50px] w-full pl-[16px] md:pl-[0px]  flex flex-col justify-center items-center">
-      <h2 className="md:w-[80%] 2xl:w-[70%] font-GothamBold text-2xl lg:text-Titulos my-5 lg:mt-[20px] text-start w-full pl-3 md:pl-0">
+    <div className=" py-10 md:py-[50px] w-full  md:pl-[0px]  flex flex-col justify-center items-center">
+      <h2 className="md:w-[80%] 2xl:w-[70%] font-GothamBold text-2xl lg:text-Titulos my-5 lg:mt-[20px] text-start w-full pl-[5%] md:pl-0">
         Productos Recomendados
       </h2>
 
       {/* mobile */}
-      <div className="block lg:hidden pl-[16px] pt-[32px] ">
+      <div className="block md:hidden pl-[5%] pr-0 pt-[32px] w-[100%] bg-red-500">
         <Slider {...settings}>
           {products.map((product) => (
             <div key={product.id}>
@@ -44,11 +44,11 @@ const RecommendedProducts = () => {
 
       {/* desktop */}
       <div className="w-full flex justify-center items-center">
-      <div className="hidden px-[16px] md:px-[0px] md:flex justify-between md:w-[80%] 2xl:w-[70%]">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+        <div className="hidden px-[16px] md:px-[0px] md:flex justify-between md:w-[80%] 2xl:w-[70%]">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
     </div>
   );

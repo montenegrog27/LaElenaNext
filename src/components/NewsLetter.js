@@ -8,22 +8,24 @@ function NewsLetter() {
       style={{ backgroundImage: `url(${imagenN.src})` }}
     >
       <div className="md:w-[80%] 2xl:w-[70%] flex justify-end items-end">
-      <div className=" bg-opacity-70 p-6 md:p-0 w-full max-w-md flex flex-col justify-center items-end ">
-        <h2 className="text-white text-lg font-semibold mb-3 text-center">
-          Subscribite a nuestro newsletter
-        </h2>
-        <div className="flex w-full justify-center gap-4">
-          {" "}
-          <input
-            type="email"
-            placeholder="Mail"
-            className="flex-1 p-2 rounded-lg border-none outline-none focus:ring-2 shadow-lg focus:ring-green-500"
-          />
-          <button className="bg-Verde text-white px-4 rounded-lg shadow-lg hover:bg-green-700 transition">
-            Enviar
-          </button>
+        <div className=" bg-opacity-70 p-6 md:p-0 w-full max-w-md flex flex-col justify-center items-end ">
+          <h2 className="text-white text-lg font-semibold mb-3 text-center">
+            Subscribite a nuestro newsletter
+          </h2>
+          <div className="flex flex-col lg:flex-row w-full justify-center gap-4">
+            {" "}
+            <input
+              type="email"
+              placeholder="Mail"
+              className="flex-1 p-2 rounded-lg border-none outline-none focus:ring-2 shadow-lg focus:ring-green-500"
+            />
+            <div className="flex justify-center items-center">
+              <button className="bg-Verde text-white px-4 rounded-lg shadow-lg hover:bg-green-700 transition w-[50%] lg:w-full py-2">
+                Enviar
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

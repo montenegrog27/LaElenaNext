@@ -4,7 +4,7 @@ import parse from "html-react-parser"; // Importa el parser
 
 const EmployeeCard = ({ name, role, image }) => {
   return (
-    <div className="border rounded-lg h-auto w-full md:w-[190px] md:h-[275px] flex flex-col justify-center items-center shadow-custom-card">
+    <div className="border rounded-lg h-auto w-full sm:w-[160px] sm:h-[275px] md:w-[190px] md:h-[275px] flex flex-col justify-center items-center shadow-custom-card">
       {image ? (
         <Image
           src={image}

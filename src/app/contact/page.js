@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <>
       <HeaderContactSection />;
-      <div className="hidden md:block w-full h-full">
+      <div className=" w-full h-full">
         <NewsLetter />
       </div>
       <Location />
