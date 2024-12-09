@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FaTruckFast } from "react-icons/fa6";
 
 const ProductPage = async ({ params }) => {
-  const { id } = params; // Captura el ID del producto desde los parámetros dinámicos
+  const { id } = params;
   const product = await fetchProduct(id);
 
   if (!product) {

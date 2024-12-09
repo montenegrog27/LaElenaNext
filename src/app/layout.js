@@ -1,10 +1,8 @@
-// /app/layout.js o /app/layout.tsx (dependiendo de si usas TypeScript)
-
 import Navbar from "@/components/Navbar";
 import "../styles/globals.css";
 import { Suspense } from "react";
 import { StaffToolbar } from "../components/staff-toolbar";
-import { AuthProvider } from "../context/AuthContext"; // Importa el AuthProvider
+import { AuthProvider } from "../context/AuthContext";
 
 export const metadata = {
   title: "Create Next App",
@@ -15,7 +13,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`font-GothamRegular`}>
-        {/* Envolver toda la aplicación con AuthProvider */}
         <AuthProvider>
           <Navbar />
           {children}

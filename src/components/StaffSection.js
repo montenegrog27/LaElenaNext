@@ -51,7 +51,7 @@ const StaffSection = () => {
 
   return (
     <div>
-            <Image
+      <Image
         src={staffPortada}
         alt="Portada de Contacto"
         layout="responsive"

@@ -37,7 +37,7 @@ const MainSection = () => {
         className="h-[216px] md:w-full md:h-auto object-cover"
       />
 
-      <div className="block md:hidden -mt-24 pl-[5%] pr-0 pt-[32px] w-[100%] bg-red-500">
+      <div className="block md:hidden -mt-24 pl-[5%] pr-0 pt-[32px] w-[100%] ">
         <Slider {...settings}>
           {products.map((product) => (
             <div className="" key={product.id}>

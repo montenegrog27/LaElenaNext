@@ -1,10 +1,7 @@
 const fetchProduct = async (id) => {
   try {
-    // Determina si estás en el cliente o servidor
     const baseURL =
-      typeof window === "undefined"
-        ? process.env.NEXT_PUBLIC_SITE_URL // Define esto en tu .env.local
-        : "";
+      typeof window === "undefined" ? process.env.NEXT_PUBLIC_SITE_URL : "";
 
     const response = await fetch(`${baseURL}/api/product/${id}`);
     if (!response.ok) throw new Error("Error al obtener el producto");

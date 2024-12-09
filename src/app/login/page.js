@@ -1,60 +1,81 @@
 "use client";
 import { useAuth } from "../../context/AuthContext";
-import { useRouter } from "next/navigation"; // Importar useRouter
-import { HiOutlineUserCircle } from "react-icons/hi2";
+import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  const { user, loginWithGoogle, logout } = useAuth();
+  const { loginWithGoogle, loginWithFacebook } = useAuth();
   const router = useRouter();
 
   const handleGoogleLogin = async () => {
     await loginWithGoogle();
-    router.push("/user"); // Redirige a "/user" después de iniciar sesión
-  };
-
-  const handleCancel = () => {
-    router.push("/"); // Redirige a "/" al cancelar
+    router.push("/user?section=Datos%20personales");
   };
 
   return (
-    <div>
-      {user ? (
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="bg-white shadow-lg rounded-lg p-5 w-[350px]">
+        <h1 className="text-2xl font-semibold mb-4 text-left">¡Bienvenido!</h1>
         <button
-          onClick={() => {
-            logout();
-            router.push("/");
-          }}
-          className="flex items-center bg-white p-2 text-black rounded"
+          onClick={handleGoogleLogin}
+          className="w-full flex items-center justify-center px-4 py-2 mb-3 bg-white border border-gray-300 rounded-lg text-sm text-gray-700 hover:bg-gray-100"
         >
-          <HiOutlineUserCircle className="h-5 w-5 mr-2" />
-          Cerrar sesión
+          <FcGoogle className="mr-2" />
+          Ingresar con Google
         </button>
-      ) : (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-lg w-96">
-            <h2 className="text-xl font-semibold">Iniciar sesión</h2>
-
-            {/* Botón de Iniciar sesión con Google */}
-            <button
-              onClick={handleGoogleLogin}
-              className="bg-red-500 text-white w-full p-2 rounded mt-4 flex justify-center items-center"
-            >
-              <HiOutlineUserCircle className="h-5 w-5 mr-2" />
-              Iniciar sesión con Google
-            </button>
-
-            {/* Botón de Cancelar */}
-            <button
-              onClick={handleCancel}
-              className="bg-gray-400 text-white w-full p-2 rounded mt-2 flex justify-center items-center"
-            >
-              Cancelar
-            </button>
-          </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 };
 
 export default Login;
+
+// const handleFacebookLogin = async () => {
+//   await loginWithFacebook();
+//   router.push("/user");
+// };
+
+{
+  /* <p className="text-sm text-gray-500 text-left mb-6">
+          Por favor ingresa tu nombre de usuario y contraseña
+        </p>
+
+        <input
+          type="text"
+          placeholder="Nombre de usuario"
+          className="w-full px-4 py-2 mb-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+
+        <input
+          type="password"
+          placeholder="Contraseña"
+          className="w-full px-4 py-2 mb-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+        /> */
+}
+
+{
+  /* <button
+          onClick={handleFacebookLogin}
+          className="w-full flex items-center justify-center px-4 py-2 mb-3 bg-white border border-gray-300 rounded-lg text-sm text-gray-700 hover:bg-gray-100"
+        >
+          <FaFacebook className="mr-2 text-blue-500" />
+          Ingresar con Facebook
+        </button> */
+}
+
+{
+  /* <button className="w-full px-4 py-3 mb-3 bg-Verde text-white rounded-lg text-sm hover:bg-green-700">
+          Ingresar
+        </button> */
+}
+
+{
+  /* <div className="text-center text-sm text-gray-500 flex flex-col justify-center items-center gap-2">
+          <a href="/register" className="hover:underline">
+            Registrarse
+          </a>
+          <a href="/forgot-password" className="hover:underline">
+            Olvide mi contraseña
+          </a>
+        </div> */
+}

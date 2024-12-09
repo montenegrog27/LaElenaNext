@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import parse from "html-react-parser"; // Importa el parser
+import parse from "html-react-parser";
 
 const EmployeeCard = ({ name, role, image }) => {
   return (

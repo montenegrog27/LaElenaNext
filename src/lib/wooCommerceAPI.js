@@ -7,5 +7,7 @@ const wooCommerceAPI = axios.create({
     password: process.env.WC_CONSUMER_SECRET,
   },
 });
-
-export default wooCommerceAPI;
+wooCommerceAPI.interceptors.request.use((config) => {
+  console.log("Configuración de la solicitud WooCommerce:", config);
+  return config;
+});

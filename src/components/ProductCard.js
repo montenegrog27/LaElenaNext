@@ -4,7 +4,7 @@ const ProductCard = ({ product }) => {
   return (
     <Link href={`/product/${product.id}`}>
       <div
-        className="h-[90%] w-[95%] sm:w-[85%] sm:h-[75%]  md:w-[190px] md:h-[95%] lg:w-[250px] lg:h-[90%] 2xl:w-[90%] 2xl:h-[90%] bg-green-500 md:bg-blue-500 lg:bg-red-500 2xl:bg-yellow-400 sm:bg-orange-400 
+        className="h-[90%] w-[95%] sm:w-[85%] sm:h-[75%]  md:w-[190px] md:h-[95%] lg:w-[250px] lg:h-[90%] 2xl:w-[90%] 2xl:h-[90%]
       border rounded-lg mb-[32px] md:pb-[20px] flex justify-start flex-col hover:translate-y-[1px] 
       hover:cursor-pointer transition-all duration-700 hover:shadow-[4px_20px_15px_2px_rgba(0,0,0,0.15)] shadow-custom-card"
       >

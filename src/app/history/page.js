@@ -4,8 +4,6 @@ import Image from "next/image";
 import misionVision from "../assets/images/misionVision.png";
 import portadaContact from "@/app/assets/images/historiaPortada.png";
 
-
-
 const timelineData = [
   {
     id: 1,
@@ -62,24 +60,22 @@ Mirando hacia el futuro, La Elena S.A. continúa innovando y creciendo. Actualme
 function History() {
   return (
     <>
-        <Image
+      <Image
         src={portadaContact}
         alt="Portada de Contacto"
         layout="responsive"
         width={1200}
         height={600}
-        className="w-full h-auto object-cover relative z-20"
+        className="w-full h-auto lg:mt-28 object-cover relative z-20"
       />
       <div className="container mx-auto px-4 my-36 md:my-10 w-full">
         <div className="relative z-20">
-        <div className="h-auto mb-4 md:mb-[50px] flex flex-col justify-center items-center">
-        <h1 className="text-lg md:text-3xl font-bold mb-1 text-center bg-white lg:bg-transparent z-11 border-4 border-HoverPrimario rounded-xl lg:border-0">
-            Somos La Elena y esta es nuestra historia
-          </h1>
-          <div className="h-[2px] md:h-1 bg-Verde w-[40%] md:w-[45%] rounded text-center"></div>
-
+          <div className="h-auto mb-4 md:mb-[50px] flex flex-col justify-center items-center">
+            <h1 className="text-lg md:text-3xl font-bold mb-1 text-center bg-white lg:bg-transparent z-11 border-4 border-HoverPrimario rounded-xl lg:border-0">
+              Somos La Elena y esta es nuestra historia
+            </h1>
+            <div className="h-[2px] md:h-1 bg-Verde w-[40%] md:w-[45%] rounded text-center"></div>
           </div>
-
         </div>
         <div className="relative wrap overflow-hidden px-0 md:px-[100px] h-full w-full ">
           <div
