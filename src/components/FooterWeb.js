@@ -5,6 +5,7 @@ import { LuPhone } from "react-icons/lu";
 import logoSelftech from "@/app/assets/logo/logoself.png";
 import logo from "@/app/assets/logo/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 function FooterWeb() {
   return (
@@ -51,24 +52,24 @@ function FooterWeb() {
               <h3 className="font-Bold text-left">Secciones</h3>
               <ul className="space-y-1 text-center md:text-left">
                 <li className="text-left">
-                  <a href="/" className="hover:underline font-Regular">
+                  <Link href="/" className="hover:underline font-Regular">
                     Categorías
-                  </a>
+                  </Link>
                 </li>
                 <li className="text-left">
-                  <a href="/staff" className="hover:underline font-Regular">
+                  <Link href="/staff" className="hover:underline font-Regular">
                     Staff
-                  </a>
+                  </Link>
                 </li>
                 <li className="text-left">
-                  <a href="/history" className="hover:underline">
+                  <Link href="/history" className="hover:underline">
                     Historia
-                  </a>
+                  </Link>
                 </li>
                 <li className="text-left">
-                  <a href="/contact" className="hover:underline">
+                  <Link href="/contact" className="hover:underline">
                     Contacto
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

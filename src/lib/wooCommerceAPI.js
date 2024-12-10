@@ -11,3 +11,5 @@ wooCommerceAPI.interceptors.request.use((config) => {
   console.log("Configuración de la solicitud WooCommerce:", config);
   return config;
 });
+
+export default wooCommerceAPI;
