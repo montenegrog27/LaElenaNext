@@ -26,7 +26,9 @@ const LoginModal = ({ isOpen, onClose, onGoogleLogin }) => {
   const handleGoogleLogin = async () => {
     const responseLogin = await loginWithGoogle();
     console.log("LOGUEADO", responseLogin);
-    await createToken(responseLogin);
+    if(responseLogin != undefined){
+      await createToken(responseLogin);
+    }
     onClose();
     router.push("/user?section=Datos%20personales");
   };
