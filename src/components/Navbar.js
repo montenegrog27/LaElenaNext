@@ -85,7 +85,7 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Buscar productos, marcas y más"
-            className="-ml-1 py-2 pl-[35px] md:mx- rounded bg-white text-black text-BodySMobile md:text-BodyS w-full h-full lgh-[90%] md:h-auto md:w-full "
+            className="-ml-1 py-2 pl-[35px] rounded bg-white text-black text-BodySMobile md:text-BodyS w-full h-full lg:h-[25px] md:h-[25px] md:w-full "
           />
         </div>
 
@@ -158,7 +158,7 @@ const Navbar = () => {
               Iniciar Sesión
             </button>
           )}
-          <button className=" md:flex items-center  md:bg-white p-1 rounded-full md:p-2 text-white md:text-black md:rounded">
+          <button className=" md:flex items-center  md:bg-white p-1 rounded-full md:px-2 text-white md:text-black md:rounded">
             <CiShoppingCart className=" w-[36px] h-[36px] md:h-5 md:w-5 md:mr-2" />
             <p className="hidden md:block">Carrito</p>
           </button>
