@@ -39,13 +39,13 @@ const ProductCard = ({ product }) => {
               {/* Verifica si hay un precio con descuento */}
               {product.sale_price ? (
                 <div className="flex flex-col">
-                  <span className=" absolute md:-mt-3 lg:-mt-5 2xl:-mt-10  line-through text-gray-500 text-PreciosMobile lg:text-Precios ml-2 ">
+                  <span className=" md:absolute  lg:-mt-8 2xl:-mt-14  line-through text-gray-500 text-PreciosMobile lg:text-Precios ">
                     ${product.regular_price}
                   </span>
-                  <span className="ml-2 ">${product.sale_price}</span>
+                  <span className="">${product.sale_price}</span>
                 </div>
               ) : (
-                <span className="ml-2 ">${product.price}</span>
+                <span className=" ">${product.price}</span>
               )}
             </div>
           </div>
