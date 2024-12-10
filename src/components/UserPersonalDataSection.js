@@ -24,20 +24,34 @@ const UserPersonalDataSection = ({ user }) => {
     const verify = async () => {
       const data = await verifyUserInWordPress(currentUserEmail);
       console.log("data:", data);
-      setUserData(data.data);
+      setUserData(data);
     };
     verify();
-  }, []);
+  }, [currentUserEmail]);
+
+  useEffect(() => {
+    if (userData) {
+      setName(userData.firstName || "");
+      setLastName(userData.lastName || "");
+      setEmail(userData.email || "");
+      setPhone(userData.phone || "");
+      setBirthDate(userData.birthDate || "");
+    }
+  }, [userData]);
 
   // Alternar entre modo de edición y modo de vista
   const handleEditToggle = () => {
     setIsEditing(!isEditing);
   };
+
+  const token = localStorage.getItem("wordpressUserToken");
+
   // Guardar los cambios
   const handleSave = async () => {
     try {
       // Enviar los datos actualizados al backend
       const response = await axios.post("/api/updateUser", {
+        token,
         userId: currentUserId, // ID del usuario
         name,
         lastName,
@@ -60,7 +74,7 @@ const UserPersonalDataSection = ({ user }) => {
 
   return (
     <section>
-      <h2 className="text-2xl font-bold mb-4 bg-red-500">Datos Personales</h2>
+      <h2 className="text-2xl font-bold mb-4">Datos Personales</h2>
       <form className="space-y-4">
         <div className="flex space-x-4">
           {/* Campo de Nombre */}

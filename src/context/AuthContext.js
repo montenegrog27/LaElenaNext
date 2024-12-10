@@ -17,7 +17,6 @@ export const AuthProvider = ({ children }) => {
 
   // Mueve estas funciones arriba para que estén disponibles antes de ser llamadas
   const verifyUserInWordPress = async (email) => {
-    console.log("email,email", email);
     try {
       // Realiza una solicitud GET a tu endpoint para verificar el cliente
       const response = await axios.get(
@@ -50,6 +49,28 @@ export const AuthProvider = ({ children }) => {
       console.error("Error al crear el usuario en WordPress:", error);
     }
   };
+  const createToken = async (email) => {
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_SITE_URL}/api/createToken`, // Cambié GET por POST
+        { email }, // Envía el email como parte del cuerpo de la solicitud
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      console.log("token creado:", response.data);
+      const token = response.data.token;
+
+      // Almacenar token y datos del usuario
+      localStorage.setItem("wordpressUserToken", token);
+      return token;
+    } catch (error) {
+      console.error("Error al crear token:", error);
+    }
+  };
 
   const loginWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
@@ -58,7 +79,6 @@ export const AuthProvider = ({ children }) => {
       setUser(result.user);
 
       const email = result.user.email;
-      console.log("emaillll", email);
 
       // Verificar si el email es usuario en WordPress
       const verify = await verifyUserInWordPress(email);
@@ -66,20 +86,25 @@ export const AuthProvider = ({ children }) => {
       if (verify.email) {
         localStorage.setItem("wordpressUserEmail", verify.email);
         localStorage.setItem("wordpressUserId", verify.userId);
+        return verify.email;
       }
       if (verify.exists === false) {
         console.log("entra aca a crear el usuario");
         const createUserResponse = await createUser(email);
-        console.log("usuario creado para guardar en local", createUserResponse);
+        console.log(
+          "user creado para guardar en localStorage",
+          createUserResponse
+        );
         localStorage.setItem(
           "wordpressUserEmail",
           createUserResponse.userCreated.email
         );
         localStorage.setItem(
           "wordpressUserId",
-          createUserResponse.userCreated.userId
+          createUserResponse.userCreated.id
         );
-        return createUserResponse;
+
+        return createUserResponse.userCreated.email;
       }
       return verify;
     } catch (error) {
@@ -117,6 +142,7 @@ export const AuthProvider = ({ children }) => {
         logout,
         verifyUserInWordPress,
         createUser,
+        createToken,
       }}
     >
       {children}

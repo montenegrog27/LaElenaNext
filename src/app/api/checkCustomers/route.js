@@ -20,12 +20,16 @@ export async function GET(req) {
     const user = wpResponse.data; // Aquí asumimos que `data` contiene el usuario o null
     console.log("FALSO???", user);
     if (user) {
-      console.log("Usuario encontrado:", user);
       return new Response(
         JSON.stringify({
           exists: true,
           userId: user.id,
-          email: user.email, // Devuelve el ID del usuario
+          email: user.email,
+          firstName: user.first_name, // Ejemplo: nombre
+          lastName: user.last_name, // Ejemplo: apellido
+          phone: user.phone, // Ejemplo: teléfono
+          birthDate: user.birth_date, // Ejemplo: fecha de nacimiento
+          // Agrega cualquier otro dato que WordPress esté enviando
         }),
         { status: 200, headers: { "Content-Type": "application/json" } }
       );

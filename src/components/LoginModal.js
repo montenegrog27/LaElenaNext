@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 
 const LoginModal = ({ isOpen, onClose, onGoogleLogin }) => {
-  const { loginWithGoogle, loginWithFacebook } = useAuth();
+  const { loginWithGoogle, createToken, loginWithFacebook } = useAuth();
   const router = useRouter();
 
   const modalRef = useRef(null);
@@ -24,7 +24,9 @@ const LoginModal = ({ isOpen, onClose, onGoogleLogin }) => {
   }, [onClose]);
 
   const handleGoogleLogin = async () => {
-    await loginWithGoogle();
+    const responseLogin = await loginWithGoogle();
+    console.log("LOGUEADO", responseLogin);
+    await createToken(responseLogin);
     onClose();
     router.push("/user?section=Datos%20personales");
   };

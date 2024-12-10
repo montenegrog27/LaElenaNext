@@ -22,7 +22,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
-  //! modal estados
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -32,11 +31,6 @@ const Navbar = () => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-  // const handleGoogleLogin = () => {
-  //   console.log("Login with Google");
-  //   setIsModalOpen(false);
-  // };
-  //!
 
   const handleNavigate = (section) => {
     router.push(`/user?section=${section}`);

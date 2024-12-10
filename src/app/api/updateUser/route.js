@@ -3,7 +3,7 @@ import axios from "axios";
 export async function POST(request) {
   try {
     const body = await request.json(); // Datos enviados desde el cliente
-    const { userId, name, lastName, email, phone, birthDate } = body;
+    const { token, userId, name, lastName, email, phone, birthDate } = body;
 
     if (!userId || !email) {
       return new Response("Faltan parámetros requeridos", { status: 400 });
@@ -11,7 +11,7 @@ export async function POST(request) {
 
     // Configurar los datos de actualización
     const updatedData = {
-      user_id: userId,
+      user_id: Number(userId),
       first_name: name,
       last_name: lastName,
       email,
@@ -19,13 +19,18 @@ export async function POST(request) {
       birth_date: birthDate,
     };
 
+    // Obtener el token desde localStorage
+    if (!token) {
+      return new Response("Token no encontrado", { status: 401 });
+    }
+
     // Hacer la solicitud al endpoint personalizado con el token OAuth2
     const response = await axios.post(
-      `https://laelena.selftechagency.net/wp-json/custom-api/v1/update-user`, // URL de tu API
+      `https://laelena.selftechagency.net/wp-json/custom/v1/update-user`, // URL de tu API
       updatedData,
       {
         headers: {
-          Authorization: `Bearer jL4I1yKt928LaCHU9LxrJNEvBxur0p3gyO7YX1Sr`, // Aquí colocas el token de acceso
+          Authorization: `Bearer ${token}`, // Usamos el token desde localStorage
           "Content-Type": "application/json",
         },
       }

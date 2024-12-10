@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }) => {
 
   useEffect(() => {
     if (user === null) {
-      router.push("/login");
+      router.push("/");
     }
   }, [user, router]);
 

@@ -16,7 +16,7 @@ export async function GET(req) {
     const userToCreate = {
       email,
       username: email,
-      password: "123456",
+      password: "User123456",
       roles: ["customer"],
     };
 

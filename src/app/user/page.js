@@ -2,7 +2,7 @@
 
 import { useAuth } from "@/context/AuthContext";
 import PrivateRoute from "@/components/PrivateRoute";
-import UserPersonalDataSection from "@/components/UserPersonalDataSection"; // Importamos el componente
+import UserPersonalDataSection from "@/components/UserPersonalDataSection";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
