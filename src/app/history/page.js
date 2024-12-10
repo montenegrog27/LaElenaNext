@@ -66,46 +66,46 @@ function History() {
         layout="responsive"
         width={1200}
         height={600}
-        className="w-full h-auto lg:mt-28 object-cover relative z-20"
+        className="w-full h-auto mt-16 lg:mt-28 object-cover relative z-20"
       />
-      <div className="container mx-auto px-4 my-36 md:my-10 w-full">
+      <div className="container mx-auto px-4 my-10  w-full">
         <div className="relative z-20">
-          <div className="h-auto mb-4 md:mb-[50px] flex flex-col justify-center items-center">
-            <h1 className="text-lg md:text-3xl font-bold mb-1 text-center bg-white lg:bg-transparent z-11 border-4 border-HoverPrimario rounded-xl lg:border-0">
+          <div className="h-auto mb-4 lg:mb-[50px] flex flex-col justify-center items-center">
+            <h1 className="text-lg lg:text-3xl font-bold mb-1 text-center bg-white lg:bg-transparent z-11 border-4 border-HoverPrimario rounded-xl lg:border-0">
               Somos La Elena y esta es nuestra historia
             </h1>
-            <div className="h-[2px] md:h-1 bg-Verde w-[40%] md:w-[45%] rounded text-center"></div>
+            <div className="hidden lg:blockh-[2px] lg:h-1 bg-Verde w-[40%] lg:w-[45%] rounded text-center"></div>
           </div>
         </div>
-        <div className="relative wrap overflow-hidden px-0 md:px-[100px] h-full w-full ">
-          <div
-            id="raya"
-            className="fixed top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1.5 bg-HoverPrimario -ml-1 md:left-40 md:ml-5 z-0"
-          ></div>
+        <div className="relative wrap overflow-hidden px-0 lg:px-[100px] h-full w-full ">
           {timelineData.map((milestone, index) => (
             <div
               key={milestone.id}
-              className="mb-8 flex justify-start items-center w-full flex-col md:flex-row gap-10  "
+              className="mb-8 flex justify-start items-center w-full flex-col lg:flex-row gap-10  "
             >
               {/* <div className="order-1 "></div> */}
-              <div className="z-6 flex items-center left-40 order-1 bg-HoverPrimario shadow-xl w-4 h-6 md:w-8 md:h-8 rounded-full min-w-fit p-2 absolute">
-                <h1 className="mx-auto font-semibold text-BodyMobile md:text-lg px-2 text-white">
+              <div className="z-6 flex items-center left-5%] order-1 bg-HoverPrimario shadow-xl w-4 h-6 lg:w-8 lg:h-8 rounded-full min-w-fit p-2 absolute">
+                <div
+                  id="raya"
+                  className="fixed top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1.5 bg-HoverPrimario -ml-1 lg:left-[12.5%] md:ml-5 z-0"
+                ></div>
+                <h1 className="mx-auto font-semibold  text-BodyMobile lg:text-lg px-2 text-white z-10">
                   {milestone.date}
                 </h1>
               </div>
-              <div className="order-1 flex flex-col md:flex-row justify-center items-center md:items-start gap-5 px-4 md:px-6 py-4 rounded-lg shadow-xl bg-HoverPrimario text-white md:ml-48 z-10 mt-10 md:mt-0">
+              <div className="order-1 flex flex-col lg:flex-row justify-center items-center lg:items-start gap-5 px-4 lg:px-6 py-4 rounded-lg shadow-xl bg-HoverPrimario text-white lg:ml-48 z-10 mt-10 lg:mt-0">
                 <Image
                   src={milestone.image}
                   width={500}
                   height={450}
                   alt="imageHistory"
-                  className="object-cover w-64 md:w-96 h-36 md:h-60 rounded-md"
+                  className="object-cover w-64 lg:w-96 h-36 lg:h-60 rounded-md"
                 />
                 <div>
-                  <h3 className="mb-3 font-bold text-TitulosXSMobile md:text-xl">
+                  <h3 className="mb-3 font-bold text-TitulosXSMobile lg:text-xl">
                     {milestone.title}
                   </h3>
-                  <p className="text-xs md:text-sm leading-[17px] tracking-wide ">
+                  <p className="text-xs lg:text-sm leading-[17px] tracking-wide ">
                     {milestone.description}
                   </p>
                 </div>

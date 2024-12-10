@@ -13,13 +13,13 @@ const ProductCard = ({ product }) => {
     <div className="relative flex flex-col">
       {/* Porcentaje de descuento en la esquina superior derecha */}
       {discountPercentage && (
-        <div className="absolute z-40 mt-2 right-2 bg-Verde text-white text-Body font-Body px-2 py-1 rounded-lg">
+        <div className="absolute z-40 mt-2 right-2 bg-Verde text-white text-PreciosMobile md:text-BodySMobile lg:text-Body font-Body px-2 py-1 rounded-lg">
           -{discountPercentage}% off
         </div>
       )}
       <Link href={`/product/${product.id}`}>
         <div
-          className="h-[90%] w-[95%] sm:w-[85%] sm:h-[75%] md:w-[190px] md:h-[95%] lg:w-[250px] lg:h-[90%] 2xl:w-[90%] 2xl:h-[90%]
+          className="h-[95%] w-[95%] sm:w-[85%] sm:h-[75%] md:w-[190px] md:h-[95%] lg:w-[250px] lg:h-[90%] 2xl:w-[90%] 2xl:h-[90%]
         border rounded-lg mb-[32px] md:pb-[20px] flex justify-start flex-col hover:translate-y-[1px] 
         hover:cursor-pointer transition-all duration-700 hover:shadow-[4px_20px_15px_2px_rgba(0,0,0,0.15)] shadow-custom-card relative"
         >
@@ -35,17 +35,17 @@ const ProductCard = ({ product }) => {
             <h2 className="mt-1 font-GothamRegular text-BodySMobile lg:text-Body sm:min-h-[60px] lg:min-h-[120px] ">
               {product.name}
             </h2>
-            <div className="text-PreciosMobile lg:text-Precios bottom-0">
+            <div className="text-PreciosMobile lg:text-Precios bottom-0 ">
               {/* Verifica si hay un precio con descuento */}
               {product.sale_price ? (
                 <div className="flex flex-col">
-                  <span className="line-through text-gray-500 text-[20px] ml-2 ">
+                  <span className=" absolute md:-mt-3 lg:-mt-5 2xl:-mt-10  line-through text-gray-500 text-PreciosMobile lg:text-Precios ml-2 ">
                     ${product.regular_price}
                   </span>
                   <span className="ml-2 ">${product.sale_price}</span>
                 </div>
               ) : (
-                <span>${product.price}</span>
+                <span className="ml-2 ">${product.price}</span>
               )}
             </div>
           </div>

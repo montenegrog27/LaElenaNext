@@ -59,8 +59,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-VerdeNavbarradiente text-white px-[16px] md:px-[50px] py-[16px] fixed top-0 w-full z-50">
-      <div className="container mx-auto flex justify-between items-center gap-[16px]">
+    <nav className="bg-VerdeNavbarradiente text-white px-[10px] md:px-[50px] py-[16px] fixed top-0 w-full z-50">
+      <div className="container mx-auto flex justify-between items-center gap-[8px] lg:gap-[16px]">
         <Link href="/">
           <Image
             src={logo}
@@ -76,16 +76,16 @@ const Navbar = () => {
             alt="LogoMobile"
             width={"100%"}
             height={"100%"}
-            className="md:hidden h-10"
+            className="md:hidden h-10 w-10 "
           />
         </Link>
 
-        <div className="flex flex-row w-full  h-[100%]  md:w-[40%] bg-white rounded justify-start pl-2 items-center">
+        <div className="flex flex-row w-full py-2 lg-py-0  h-[100%]  lg:w-[40%] bg-white rounded justify-start pl-2 items-center">
           <CiSearch className="text-gray-300 h-[24px] w-[24px]  absolute" />
           <input
             type="text"
             placeholder="Buscar productos, marcas y más"
-            className="-ml-1 py-2 pl-[35px] md:mx- rounded bg-white text-black text-BodySMobile md:text-BodyS w-full h-[90%] md:h-auto md:w-full "
+            className="-ml-1 py-2 pl-[35px] md:mx- rounded bg-white text-black text-BodySMobile md:text-BodyS w-full h-full lgh-[90%] md:h-auto md:w-full "
           />
         </div>
 

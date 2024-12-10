@@ -32,7 +32,7 @@ const RecommendedProducts = () => {
       </h2>
 
       {/* mobile */}
-      <div className="block md:hidden pl-[5%] pr-0 pt-[32px] w-[100%] bg-red-500">
+      <div className="block md:hidden pl-[5%] pr-0 pt-[32px] w-[100%]">
         <Slider {...settings}>
           {products.map((product) => (
             <div key={product.id}>
